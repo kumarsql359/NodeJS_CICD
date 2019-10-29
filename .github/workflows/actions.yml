@@ -35,9 +35,9 @@ jobs:
      - name: upload to S3
        working-directory: my-app
        env: 
-          AWS_ACCESS_KEY_ID: "{{secrets.ac_key}}"
-          AWS_SECRET_ACCESS_KEY: "{{secrets.sec_key}}"
-          BUCKET_NAME: "{{secrets.bucket_name}}"
-          BUCKET_KEY: "{{secrets.bucket_key}}"
+          AWS_ACCESS_KEY_ID: ${{secrets.ac_key}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.sec_key}}
+          BUCKET_NAME: ${{secrets.bucket_name}}
+          BUCKET_KEY: ${{secrets.bucket_key}}
        run: |
           aws s3 cp code.zip s3://$BUCKET_NAME/$BUCKET_KEY/
