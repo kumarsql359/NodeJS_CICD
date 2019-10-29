@@ -16,8 +16,16 @@ jobs:
        working-directory: my-app
        run: ls -l
        
-     - name: Build
+     - name: npm install, build, and test
        working-directory: my-app
        run: |
-          npm install
-          npm run build
+         npm install
+         npm run build --if-present
+         npm test
+       env:
+         CI: true
+      
+     - name: zip build file
+       working-directory: my-app
+       run: |
+          zip code.zip build/
