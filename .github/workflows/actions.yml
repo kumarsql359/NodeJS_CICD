@@ -1,0 +1,17 @@
+name: Node JS CI/CD
+on: [push]
+
+jobs:
+
+   build:
+
+     runs-on: ubuntu-latest
+
+     steps:
+     # Checkout.
+     - uses: actions/checkout@v1
+
+     # Update
+     - name: Check npm
+       working-directory: /tmp
+       run: npm
