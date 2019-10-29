@@ -11,7 +11,12 @@ jobs:
      # Checkout.
      - uses: actions/checkout@v1
 
-     # Update
+     # File Check
      - name: Check Files.
        working-directory: my-app
        run: ls -l
+       
+     - name: Build
+       working-directory: my-app
+       run: |
+          npm build
