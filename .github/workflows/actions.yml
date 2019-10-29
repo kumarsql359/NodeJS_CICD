@@ -31,3 +31,8 @@ jobs:
        run: |
           zip code.zip build/
           ls -l
+          
+     - name: upload to S3
+       working-directory: my-app
+       run: |
+          aws 
