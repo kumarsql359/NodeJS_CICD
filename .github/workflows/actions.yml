@@ -13,4 +13,5 @@ jobs:
 
      # Update
      - name: Check Files.
+       working-directory: my-app
        run: ls -l
