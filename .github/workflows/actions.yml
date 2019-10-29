@@ -19,4 +19,5 @@ jobs:
      - name: Build
        working-directory: my-app
        run: |
+          npm install
           npm run build
