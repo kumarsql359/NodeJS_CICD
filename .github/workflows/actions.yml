@@ -31,7 +31,6 @@ jobs:
        run: |
           cd build && zip -r code.zip *
           ls -l
-          ls -l build/
           
      - name: upload to S3
        working-directory: my-app
