@@ -29,7 +29,7 @@ jobs:
      - name: zip build file
        working-directory: my-app
        run: |
-          cd build && zip -r code.zip *
+          cd build && zip -r ../code.zip *
           ls -l
           
      - name: upload to S3
