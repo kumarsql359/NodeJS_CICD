@@ -12,6 +12,5 @@ jobs:
      - uses: actions/checkout@v1
 
      # Update
-     - name: Check npm
-       working-directory: /tmp
-       run: npm
+     - name: Check Files.
+       run: ls -l
