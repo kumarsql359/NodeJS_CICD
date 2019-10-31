@@ -41,3 +41,14 @@ jobs:
           BUCKET_KEY: ${{secrets.bucket_key}}
        run: |
           aws s3 cp code.zip s3://$BUCKET_NAME/$BUCKET_KEY/
+          
+     - name: Update Lambda
+       env: 
+          AWS_ACCESS_KEY_ID: ${{secrets.ac_key}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.sec_key}}
+       run: |
+          aws lambda update-function-code \
+              --function-name  MyTestNodeJS \
+              --s3-bucket swarmcluster-statefile \
+              --s3-key node/code.zip
+              
