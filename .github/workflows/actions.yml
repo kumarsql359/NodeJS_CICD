@@ -11,7 +11,7 @@ jobs:
      # Checkout.
      - uses: actions/checkout@v1
 
-     # File Check
+     # File Check.
      - name: Check Files.
        working-directory: my-app
        run: ls -l
