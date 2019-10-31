@@ -4,7 +4,7 @@ on: [push]
 jobs:
 
    build:
-
+     name: Build
      runs-on: ubuntu-latest
 
      steps:
@@ -42,6 +42,11 @@ jobs:
        run: |
           aws s3 cp code.zip s3://$BUCKET_NAME/$BUCKET_KEY/
           
+   deploy:
+     name: Deploy
+     needs: [build]
+     runs-on: ubuntu-latest
+     steps:
      - name: Update Lambda
        env: 
           AWS_ACCESS_KEY_ID: ${{secrets.ac_key}}
