@@ -47,7 +47,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{secrets.ac_key}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.sec_key}}
        run: |
-          aws configure --region ap-south-1
+          aws configure set default.region ap-south-1
           aws lambda update-function-code \
               --function-name  MyTestNodeJS \
               --s3-bucket swarmcluster-statefile \
